@@ -1,0 +1,10 @@
+page-regions {
+    .greyscaleCard {
+        opacity: .2;
+        background-color: #bfbfbf;
+        .card, h2 {
+        background-color: #bfbfbf;
+        box-shadow: none;       
+        }
+    }
+}

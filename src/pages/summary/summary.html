@@ -1,0 +1,62 @@
+<!--
+  Generated template for the SummaryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar no-border-bottom>
+    <ion-title>SUMMARY PAGE YEAH</ion-title>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="helper.dataType" color='dark' block>
+      <ion-segment-button value="quickplay">Quickplay</ion-segment-button>
+      <ion-segment-button value="competitive">Competetive</ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div [ngSwitch]="helper.dataType">
+    <div *ngSwitchCase="'quickplay'">
+      <ion-card class="my-card">
+        <img src="{{overall.quickplay.overall_stats.avatar}}" alt="Player's avatar">
+        <h1>Level: <span>{{overall.quickplay.overall_stats.level}}</span></h1>
+        <p>Comprank: <span>{{overall.quickplay.overall_stats.comprank}}</span></p>
+        <p>Wins: <span>{{overall.quickplay.overall_stats.wins}}</span></p>
+        <p>Prestige: <span>{{overall.quickplay.overall_stats.prestige}}</span></p>
+        <p>Tier: <span>{{overall.quickplay.overall_stats.tier}}</span></p>
+        <p>Damage done: <span>{{overall.quickplay.game_stats.all_damage_done}}</span></p>
+        <p>Medals: <span>{{overall.quickplay.game_stats.medals}}</span></p>
+        <p>KPD: <span>{{overall.quickplay.game_stats.kpd}}</span></p>
+        <p>Time played: <span>{{overall.quickplay.game_stats.time_played}} hours</span></p>
+      </ion-card>
+      <ion-list>
+        <button ion-button block color="dark" (click)="goToHeroesPage('quickplay')">Heroes Stats</button>
+        <button ion-button block color="dark" (click)="goToDetailsOverall('quickplay')">Game Stats</button>
+        <button ion-button block color="dark" (click)="goToDetailsAchievements('quickplay')">Achievements</button>
+      </ion-list>
+    </div>
+    <div *ngSwitchCase="'competitive'">
+      <ion-card class="my-card">
+        <img src="{{overall.competitive.overall_stats.avatar}}" alt="Player's avatar">
+        <h1>Level: <span>{{overall.competitive.overall_stats.level}}</span></h1>
+        <p>Comprank: <span>{{overall.competitive.overall_stats.comprank}}</span></p>
+        <p>Wins: <span>{{overall.competitive.overall_stats.wins}}</span></p>
+        <p>Prestige: <span>{{overall.competitive.overall_stats.prestige}}</span></p>
+        <p>Tier: <span>{{overall.competitive.overall_stats.tier}}</span></p>
+        <p>Damage done: <span>{{overall.competitive.game_stats.all_damage_done}}</span></p>
+        <p>Medals: <span>{{overall.competitive.game_stats.medals}}</span></p>
+        <p>KPD: <span>{{overall.competitive.game_stats.kpd}}</span></p>
+        <p>Time played: <span>{{overall.competitive.game_stats.time_played}} hours</span></p>
+      </ion-card>
+      <ion-list>
+        <button ion-button block color="dark" (click)="goToHeroesPage('competitive')">Heroes Stats</button>
+        <button ion-button block color="dark" (click)="goToDetailsOverall('competitive')">Game Stats</button>
+        <button ion-button block color="dark" (click)="goToDetailsAchievements('competitive')">Achievements</button>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,29 @@
+<ion-header color="primary">
+  <ion-navbar color="primary">
+    <ion-title>
+      Overwatch Stats App
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="searchPlayer('player.name', 'player.platform', 'stats')">
+  <ion-list>
+    <ion-item>
+      <ion-input type="text" placeholder="Enter your battletag" [(ngModel)]="player.name" name="player.name"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-list radio-group [(ngModel)]="player.platform" name="platform">
+    <ion-list-header>
+      Select your platform:
+    </ion-list-header>
+    <ion-item *ngFor="let platform of platforms">
+      <ion-label>{{platform.name}}</ion-label>
+      <ion-radio value="{{platform.value}}" ></ion-radio>
+    </ion-item>
+  </ion-list>
+  <button ion-button block type="submit" >Search</button>
+  </form>
+  
+
+</ion-content>

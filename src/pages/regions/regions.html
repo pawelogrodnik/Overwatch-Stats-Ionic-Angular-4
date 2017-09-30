@@ -1,0 +1,52 @@
+<!--
+  Generated template for the RegionsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>REGIONS PAGE YEAH</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding>
+ <ion-list>
+   <div *ngFor="let region of regionKeys" >
+   <ion-item [ngClass]="{'greyscaleCard': (regions[region])==null}" *ngIf="region!='_request'">
+     <div class="custom-card" (click)="goToSummary(region)" *ngIf="(regions[region])!=null && region!='any'">
+        <h2>{{region | uppercase}}</h2>       
+     </div>
+     <div class="custom-card" *ngIf="(regions[region])==null && region!='any'">
+        <h2>{{region | uppercase}}</h2>       
+     </div>
+     <div class="custom-card" *ngIf="(regions[region])==null && region=='any'">
+        <h2>CONSOLE REGION</h2>       
+     </div>
+     <div class="custom-card" (click)="goToSummary(region)" *ngIf="(regions[region])!=null && region=='any'">
+        <h2>CONSOLE REGION</h2>       
+     </div>
+   </ion-item>
+  </div>
+
+  </ion-list>
+  <!-- <ion-list no-border> -->
+      <!-- <ion-item [ngClass]="{'greyscaleCard': (regions[region])==null}" *ngIf="region!='_request'" > -->
+          
+  <!-- <ion-list>
+        <ion-list-header>Quickplay Statistics</ion-list-header>
+        <ion-item >Airplane!</ion-item>
+      </ion-list> -->
+  <!-- <ion-grid>
+    <ion-row *ngFor="let quickplay of generateArray(quickplayStats)">
+      <ion-col col-8>{{prettify(quickplay.key)}}</ion-col>
+      <ion-col col-4>{{quickplay.value}}</ion-col>
+    </ion-row>
+  </ion-grid> -->
+  <!-- </ion-list> -->
+
+</ion-content>

@@ -53,12 +53,10 @@ export class HomePage {
     this.dataService.fetchData(current.name, current.platform, 'stats').subscribe(
       (data) => {
         this.loader.dismiss();
-
         this.goToRegions(data);
       },
       (err) => {
         this.loader.dismiss();
-
         this.displayError(err)
       }
     );

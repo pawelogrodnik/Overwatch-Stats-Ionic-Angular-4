@@ -20,7 +20,7 @@
             {{helper.prettify(stat.key)}} {{stat.value}}            
         </ion-item>
     </ion-item-group>
-    <ion-item-group *ngIf="(details.hero_stats|json)!='{}'">
+    <ion-item-group *ngIf="(details.general_stats|json)!='{}'">
         <ion-item-divider color="light">General Stats</ion-item-divider>
         <ion-item *ngFor="let general of helper.generateArray(details.general_stats)">
             {{helper.prettify(general.key)}} {{general.value}}            

@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { prettyLabels } from '../../assets/prettynames';
 import { HelpersProvider } from '../../providers/helpers/helpers';
 import { DetailsPage } from '../details/details'
+import { ToastController } from 'ionic-angular';
+
 
 
 /**
@@ -20,13 +22,27 @@ import { DetailsPage } from '../details/details'
 export class HeroesPage {
   heroesData: any;
   
-  constructor(public navCtrl: NavController, public navParams: NavParams, public helper: HelpersProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public helper: HelpersProvider, public toastCtrl: ToastController) {
     this.heroesData = this.navParams.data.first;
     this.helper.dataType = this.navParams.data.second;
   }
   goToDetails(heroName, statType){
     console.log(heroName);
-    this.navCtrl.push(DetailsPage, this.heroesData.stats[statType][heroName]);
+    if ((heroName in this.heroesData.stats[statType])){
+      this.navCtrl.push(DetailsPage, this.heroesData.stats[statType][heroName]);      
+    } else {
+      this.displayToastErr(heroName);
+    }
+  }
+  displayToastErr(heroname) {
+    let toast = this.toastCtrl.create({
+      message: `No details for ${heroname}`,
+      duration: 4000,
+      position: 'bottom'
+    });
+
+    toast.present(toast);
+
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad HeroesPage');

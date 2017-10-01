@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>REGIONS PAGE YEAH</ion-title>
+    <ion-title>Select region</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -17,7 +17,7 @@
 <ion-content padding>
  <ion-list>
    <div *ngFor="let region of regionKeys" >
-   <ion-item [ngClass]="{'greyscaleCard': (regions[region])==null}" *ngIf="region!='_request'">
+   <ion-card [ngClass]="{'greyscaleCard': (regions[region])==null}" *ngIf="region!='_request'">
      <div class="custom-card" (click)="goToSummary(region)" *ngIf="(regions[region])!=null && region!='any'">
         <h2>{{region | uppercase}}</h2>       
      </div>
@@ -30,7 +30,7 @@
      <div class="custom-card" (click)="goToSummary(region)" *ngIf="(regions[region])!=null && region=='any'">
         <h2>CONSOLE REGION</h2>       
      </div>
-   </ion-item>
+   </ion-card>
   </div>
 
   </ion-list>

@@ -17,6 +17,7 @@ export class DataProvider {
   }
   fetchData(battleTag, platform, dataType) {
     console.log(`${this.baseUrl}/${battleTag}/${dataType}?platform=${platform}`);
-    return this.http.get(`${this.baseUrl}/Dad-12262/blob`).map((res:Response) => res.json());
+    // return this.http.get(`${this.baseUrl}/Dad-12262/blob`).map((res:Response) => res.json());
+    return this.http.get(`${this.baseUrl}/${battleTag}/blob?platform=${platform}`).map((res:Response) => res.json());
   }
 }

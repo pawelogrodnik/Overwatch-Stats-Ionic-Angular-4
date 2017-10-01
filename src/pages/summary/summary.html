@@ -7,12 +7,12 @@
 <ion-header>
 
   <ion-navbar no-border-bottom>
-    <ion-title>SUMMARY PAGE YEAH</ion-title>
+    <ion-title>Profile summary</ion-title>
   </ion-navbar>
   <ion-toolbar no-border-top>
     <ion-segment [(ngModel)]="helper.dataType" color='dark' block>
       <ion-segment-button value="quickplay">Quickplay</ion-segment-button>
-      <ion-segment-button value="competitive">Competetive</ion-segment-button>
+      <ion-segment-button value="competitive" *ngIf="(overall.competitive|json)!='null'">Competetive</ion-segment-button>
     </ion-segment>
   </ion-toolbar>
 </ion-header>

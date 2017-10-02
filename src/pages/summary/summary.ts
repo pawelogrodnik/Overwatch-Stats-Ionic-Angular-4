@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HeroesPage } from '../heroes/heroes'
 import { RegularDetailsPage } from '../regular-details/regular-details'
-import { AchievementsDetailsPage} from '../achievements-details/achievements-details';
+import { AchievementsDetailsPage } from '../achievements-details/achievements-details';
 
 import { prettyLabels } from '../../assets/prettynames';
-import {HelpersProvider } from '../../providers/helpers/helpers';
+import { HelpersProvider } from '../../providers/helpers/helpers';
 
 /**
  * Generated class for the SummaryPage page.
@@ -36,25 +36,21 @@ export class SummaryPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SummaryPage');
-    // console.log(this.sortedArray);
-    // console.log(this.achievementsData);
   }
   goToHeroesPage(data) {
-    console.log(`pushniecie ponizszych danych do heroes page`);
-    console.log(this.heroesData);
     this.navCtrl.push(HeroesPage, {
       'first': this.heroesData,
       'second': data
     });
 
   }
-  goToDetailsAchievements(data){
+  goToDetailsAchievements(data) {
     this.navCtrl.push(AchievementsDetailsPage, {
       'first': this.achievementsData,
       'second': data
     })
   }
-  goToDetailsOverall(data){
+  goToDetailsOverall(data) {
     this.navCtrl.push(RegularDetailsPage, {
       'first': this.overall[data],
       'second': data

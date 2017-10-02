@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { prettyLabels } from '../../assets/prettynames';
+// import { prettyLabels } from '../../assets/prettynames';
 import { HelpersProvider } from '../../providers/helpers/helpers';
 
 /**
@@ -19,7 +19,6 @@ export class DetailsPage {
   details: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public helper: HelpersProvider) {
     this.details = this.navParams.data;
-    console.log(this.details);
   }
 
   ionViewDidLoad() {

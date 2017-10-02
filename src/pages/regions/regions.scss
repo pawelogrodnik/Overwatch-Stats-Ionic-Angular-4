@@ -2,9 +2,30 @@ page-regions {
     .greyscaleCard {
         opacity: .2;
         background-color: #bfbfbf;
-        .card, h2 {
+        .card {
         background-color: #bfbfbf;
         box-shadow: none;       
+        }
+        h2 {
+            background-color: transparent;
+        }
+    }
+    .custom-card {
+        height: 20vh;
+        max-height: 250px;
+        position: relative;
+        background-color: $darkBlue;
+        h2 {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: rgba(#fff, .9);
+            padding: 0 15px;
+            font-size: 3em;
+            transform: translateY(-50%);
         }
     }
 }

@@ -26,17 +26,18 @@ export class HeroesPage {
     this.heroesData = this.navParams.data.first;
     this.helper.dataType = this.navParams.data.second;
   }
-  goToDetails(heroName, statType){
+  goToDetails(heroName, statType) {
     console.log(heroName);
+    console.log(this.heroesData.stats[statType]);
     if ((heroName in this.heroesData.stats[statType])){
       this.navCtrl.push(DetailsPage, this.heroesData.stats[statType][heroName]);      
     } else {
       this.displayToastErr(heroName);
     }
   }
-  displayToastErr(heroname) {
+  displayToastErr(heroName) {
     let toast = this.toastCtrl.create({
-      message: `No details for ${heroname}`,
+      message: `No details for ${heroName}`,
       duration: 4000,
       position: 'bottom'
     });
@@ -46,9 +47,6 @@ export class HeroesPage {
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad HeroesPage');
-    // console.log(this.heroesData);
-    // console.log(this.helper.dataType);
-    console.log(this.helper.dataType);
   }
 
 }

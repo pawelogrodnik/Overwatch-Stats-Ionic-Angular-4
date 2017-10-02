@@ -22,8 +22,6 @@ export class HomePage {
   }
   loadData() {
     this.loader = this.createLoader();
-    this.loaderbool == true ? this.loader.present() : this.loader.dismiss();
-
   }
   createLoader() {
     return this.loadingCtrl.create({
@@ -35,16 +33,13 @@ export class HomePage {
   }
 
   displayError(err) {
-    console.log(err.status);
-    console.log('Złe dane...')
-
     let toast = this.toastCtrl.create({
-      message: 'Something went wrong. Looks like input data is incorrect...',
+      message: 'Something went wrong. Looks like the input data is incorrect...',
       duration: 4000,
       position: 'bottom'
     });
 
-    toast.present(toast);
+    toast.present();
 
   }
   searchPlayer() {

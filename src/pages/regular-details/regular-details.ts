@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { prettyLabels } from '../../assets/prettynames';
+// import { prettyLabels } from '../../assets/prettynames';
 import { HelpersProvider } from '../../providers/helpers/helpers';
 
 /**
@@ -23,7 +23,6 @@ export class RegularDetailsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegularDetailsPage');
-    console.log(this.gameData);
   }
 
 }
